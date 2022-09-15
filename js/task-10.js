@@ -15,8 +15,9 @@ function openInput(event) {
 }
 
 function createBoxes(amount) {
+  [...boxesDiv.children].forEach(item => item.remove());
   let boxSize = 30;
-  for(let i=0; i<=amount; i++) {
+  for(let i=0; i<amount; i++) {
     const box = document.createElement('div');
     box.style.width = boxSize + (10*i) + 'px';
     box.style.height = boxSize + (10*i) + 'px';
@@ -27,7 +28,7 @@ function createBoxes(amount) {
 }
 
 function clearBox(event) {
-  boxesDiv.remove();
+  [...boxesDiv.children].forEach(item => item.remove());
   input.value = '';
 }
 
